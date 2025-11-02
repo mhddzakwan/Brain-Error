@@ -11,20 +11,37 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:brain_error/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Welcome screen displays correctly', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(BrainErrorApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that "Brain Error" text is displayed
+    expect(find.text('Brain Error'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Verify that the description text is displayed
+    expect(find.text('Ukur kebodohannu melalui game quiz ini'), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that the "Mulai" button is displayed
+    expect(find.text('Mulai'), findsOneWidget);
+
+    // Verify that the image is displayed (if you want to test for image)
+    expect(find.byType(Image), findsOneWidget);
+  });
+
+  testWidgets('Tap Mulai button navigates to home screen',
+      (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(BrainErrorApp());
+
+    // Verify that we are on welcome screen
+    expect(find.text('Brain Error'), findsOneWidget);
+
+    // Tap the 'Mulai' button and trigger a frame.
+    await tester.tap(find.text('Mulai'));
+    await tester.pumpAndSettle();
+
+    // Verify that we navigated to home screen
+    expect(find.text('Selamat Datang di Quiz!'), findsOneWidget);
+    expect(find.text('Siap mengukur kebodohan Anda?'), findsOneWidget);
   });
 }
