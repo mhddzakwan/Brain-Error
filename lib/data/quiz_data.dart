@@ -39,7 +39,7 @@ class QuizData {
         questions: [
           QuizQuestion(
             id: 1,
-            imagePath: 'assets/images/medan-level1-1.jpg',
+            imagePath: 'assets/images/level1-menara.jpg',
             hint:
                 'Sering jadi spot foto anak muda yang mau pamer “lagi di Medan nih!”',
             options: [
@@ -51,7 +51,7 @@ class QuizData {
           ),
           QuizQuestion(
             id: 2,
-            imagePath: 'assets/images/medan-level1-2.jpg',
+            imagePath: 'assets/images/level1-manhattan.jpg',
             hint: 'New York versi KW di Medan',
             options: [
               'Carefour',
@@ -62,7 +62,7 @@ class QuizData {
           ),
           QuizQuestion(
             id: 3,
-            imagePath: 'assets/images/medan-level1-3.jpg',
+            imagePath: 'assets/images/level1-maimun.jpg',
             hint: 'Peninggalan kerajaan Melayu yang jadi ikon kota Medan',
             options: [
               'Masjid Al Ikhlas',
@@ -82,7 +82,7 @@ class QuizData {
         questions: [
           QuizQuestion(
             id: 4,
-            imagePath: 'assets/images/medan-level2-1.jpg',
+            imagePath: 'assets/images/level2-ucok.png',
             hint: 'Duren nomor 1 di Medan',
             options: [
               'Pelawi Durian',
@@ -93,7 +93,7 @@ class QuizData {
           ),
           QuizQuestion(
             id: 5,
-            imagePath: 'assets/images/medan-level2-2.jpg',
+            imagePath: 'assets/images/level2-pos.jpg',
             hint: 'Dekat Lapangan Merdeka, bangunan peninggalan Belanda',
             options: [
               'Gedung London Sumatra (Lonsum)',
@@ -104,7 +104,7 @@ class QuizData {
           ),
           QuizQuestion(
             id: 6,
-            imagePath: 'assets/images/medan-level2-3.jpg',
+            imagePath: 'assets/images/level2-gubsu.jpg',
             hint: 'Tempatnya si Bobby',
             options: [
               'Kantor Bank Indonesia',
@@ -124,7 +124,7 @@ class QuizData {
         questions: [
           QuizQuestion(
             id: 7,
-            imagePath: 'assets/images/medan-level3-1.jpg',
+            imagePath: 'assets/images/level3-petisah.jpg',
             hint: 'Pasar tradisional yang namanya dijadikan nama kecamatan',
             options: [
               'Pajus',
@@ -135,7 +135,7 @@ class QuizData {
           ),
           QuizQuestion(
             id: 8,
-            imagePath: 'assets/images/medan-level3-2.jpg',
+            imagePath: 'assets/images/level3-keling.png',
             hint: 'Julukannya “Little India” di Medan',
             options: [
               'Vihara Gunung Timur',
@@ -146,7 +146,7 @@ class QuizData {
           ),
           QuizQuestion(
             id: 9,
-            imagePath: 'assets/images/medan-level3-3.jpg',
+            imagePath: 'assets/images/level3-simpang_pos.jpg',
             hint: 'Simpang legendaris yang sering jadi patokan arah',
             options: [
               'Simpang Pos',
