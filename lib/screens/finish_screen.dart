@@ -33,7 +33,7 @@ class FinishScreen extends StatelessWidget {
               ),
               SizedBox(height: 24),
               Text(
-                'Selamat! 🎉',
+                'Selamat!',
                 style: TextStyle(
                   fontSize: screenWidth * 0.08,
                   fontWeight: FontWeight.bold,
