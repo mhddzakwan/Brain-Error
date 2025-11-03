@@ -1,6 +1,93 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  final Function(String) onStart;
+
+  const WelcomeScreen({Key? key, required this.onStart}) : super(key: key);
+
+  void _showNameInputDialog(BuildContext context) {
+    final TextEditingController nameController = TextEditingController();
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          title: Text(
+            'Siapa Namamu?',
+            style: TextStyle(
+              fontSize: screenWidth * 0.05,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+          content: Container(
+            width: screenWidth * 0.8, // Fixed width agar tidak melebar
+            child: TextField(
+              controller: nameController,
+              decoration: InputDecoration(
+                hintText: 'Masukkan nama kamu...',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                isDense: true, // Agar lebih compact
+              ),
+              style: TextStyle(fontSize: screenWidth * 0.04),
+              autofocus: true,
+              maxLines: 1, // Hanya satu baris
+              textInputAction: TextInputAction.done,
+              onSubmitted: (value) {
+                // Submit ketika tekan enter
+                _submitName(context, nameController.text.trim());
+              },
+            ),
+          ),
+          actions: [
+            ElevatedButton(
+              onPressed: () {
+                _submitName(context, nameController.text.trim());
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF047B6D),
+                foregroundColor: Colors.white,
+              ),
+              child: Text(
+                'Mulai Game',
+                style: TextStyle(
+                  fontSize: screenWidth * 0.04,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _submitName(BuildContext context, String name) {
+    if (name.isNotEmpty) {
+      onStart(name); // Simpan nama
+      Navigator.pop(context); // Tutup dialog
+      Navigator.pushNamed(context, '/home'); // Navigate ke home
+    } else {
+      // Tampilkan pesan error jika nama kosong
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Nama tidak boleh kosong!'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -13,7 +100,7 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Brain Error',
+              'Medan Guessr',
               style: TextStyle(
                 fontSize: screenWidth * 0.12,
                 fontWeight: FontWeight.bold,
@@ -26,7 +113,7 @@ class WelcomeScreen extends StatelessWidget {
               width: screenWidth * 0.4,
               height: screenWidth * 0.4,
               child: Image.asset(
-                'images/brain-confuse.png',
+                'assets/images/welcome-medan.png',
                 fit: BoxFit.cover,
               ),
             ),
@@ -34,7 +121,7 @@ class WelcomeScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1),
               child: Text(
-                'Ukur kebodohannu melalui game quiz ini',
+                'Dimana posisi le?, papkan lah dulu',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: screenWidth * 0.05,
@@ -46,7 +133,7 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(height: screenHeight * 0.08),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/home');
+                _showNameInputDialog(context);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
