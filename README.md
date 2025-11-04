@@ -56,3 +56,6 @@ Berikut adalah tampilan antarmuka dari aplikasi Medan Guessr, mulai dari layar a
 - **Hint**: petunjuk menarik tentang lokasi, bisa berupa sejarah, keunikan, atau ciri khas tempat tersebut.
 - **Finish Screen**: muncul setelah pemain menyelesaikan semua soal di satu level, menampilkan skor dan status kelulusan.
 - **Game Over**: muncul jika pemain gagal menebak dengan benar pada batas kesempatan tertentu.
+
+# Link Mockup Design
+https://www.figma.com/design/nGilbTxGazN5pVbyyE3IDV/Untitled?node-id=0-1&t=7a6it4gpH93xJ8IQ-1
