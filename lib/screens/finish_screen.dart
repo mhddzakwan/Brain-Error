@@ -56,13 +56,6 @@ class FinishScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              Text(
-                'Skor: ${progress.progressText}',
-                style: TextStyle(
-                  fontSize: screenWidth * 0.04,
-                  color: Colors.white,
-                ),
-              ),
               SizedBox(height: 32),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
