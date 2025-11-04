@@ -155,6 +155,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         centerTitle: true,
         elevation: 0,
+        iconTheme: const IconThemeData(
+          color: Colors.white, // warna ikon back menjadi putih
+        ),
       ),
       body: SafeArea(
         child: Column(
