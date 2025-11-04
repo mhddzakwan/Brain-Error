@@ -144,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Color(0xFF00A99F),
       appBar: AppBar(
-        backgroundColor: Color(0xFF047B6D),
+        backgroundColor: const Color(0xFF047B6D),
         title: Text(
           'Medan Guessr',
           style: TextStyle(
@@ -156,13 +156,19 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         elevation: 0,
         iconTheme: const IconThemeData(
-          color: Colors.white, // warna ikon back menjadi putih
+          color: Colors.white, // warna ikon putih
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            // Arahkan ke WelcomeScreen (nama route-nya sesuaikan)
+            Navigator.pushReplacementNamed(context, '/welcome');
+          },
         ),
       ),
       body: SafeArea(
         child: Column(
           children: [
-            // HAPUS BAGIAN INI - Welcome message dihapus
             Expanded(
               child: ListView(
                 children: levels.map((level) {
