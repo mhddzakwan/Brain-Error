@@ -34,6 +34,7 @@ class _BrainErrorAppState extends State<BrainErrorApp> {
       home: WelcomeScreen(
         onStart: _setUserData,
       ),
+      debugShowCheckedModeBanner: false,
       routes: {
         '/home': (context) => HomeScreen(userData: _userData),
         '/finish': (context) {
