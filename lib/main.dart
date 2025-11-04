@@ -31,11 +31,15 @@ class _BrainErrorAppState extends State<BrainErrorApp> {
         primarySwatch: Colors.blue,
         fontFamily: 'Inter',
       ),
-      home: WelcomeScreen(
-        onStart: _setUserData,
-      ),
+
+      // Halaman awal saat app dibuka
+      initialRoute: '/welcome',
+
       debugShowCheckedModeBanner: false,
+
+      // Daftar route
       routes: {
+        '/welcome': (context) => WelcomeScreen(onStart: _setUserData),
         '/home': (context) => HomeScreen(userData: _userData),
         '/finish': (context) {
           final args = ModalRoute.of(context)?.settings.arguments as Map? ?? {};
