@@ -52,15 +52,6 @@ class GameOverScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              SizedBox(height: 16),
-              Text(
-                'Progress level telah direset',
-                style: TextStyle(
-                  fontSize: screenWidth * 0.035,
-                  color: Colors.white70,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
               SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
